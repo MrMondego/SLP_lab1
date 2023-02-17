@@ -1,0 +1,16 @@
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid black;
+  padding: 5px;
+}
+td.tdCenter {
+  text-align: center;
+}
+td.up {
+  color: lime;
+}
+td.down {
+  color: red;
+}
