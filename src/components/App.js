@@ -15,7 +15,7 @@ class App extends React.Component {
       <Stock />
       <h2>Задание 3</h2>
       {board}
-      <AddNotations board={board} />
+      <AddNotations board={board.props} />
     </main>)
   }
   

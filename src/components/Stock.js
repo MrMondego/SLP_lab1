@@ -28,21 +28,23 @@ class Stock extends React.Component {
     }]
     render() {
         return(<table id='stock'>
-        <tr>
-          <th>Stock name</th>
-          <th>Company name</th>
-          <th>Price</th>
-          <th>Currency</th>
-          <th>Change</th>
-        </tr>
-        {this.data.map((el) => (<tr>
-          <td>{el.stock_name}</td>
-          <td>{el.company_name}</td>
-          <td className='tdCenter'>{el.price}</td>
-          <td>{el.currency}</td>
-          <td className={`tdCenter ${el.change[0] === '+' ? "up" : "down"}`}>{el.change}</td>
-        </tr>))
-        }
+          <thead></thead>
+          <tbody>
+            <tr>
+              <th>Stock name</th>
+              <th>Company name</th>
+              <th>Price</th>
+              <th>Currency</th>
+              <th>Change</th>
+            </tr>
+            {this.data.map((el, index) => (<tr key={index}>
+              <td>{el.stock_name}</td>
+              <td>{el.company_name}</td>
+              <td className='tdCenter'>{el.price}</td>
+              <td>{el.currency}</td>
+              <td className={`tdCenter ${el.change[0] === '+' ? "up" : "down"}`}>{el.change}</td>
+            </tr>))}
+        </tbody>
       </table>)
     }
 }
