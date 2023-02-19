@@ -1,25 +1,21 @@
 import '../css/App.css';
 import React from 'react';
+
+import CurrentTime from './CurrentTime';
 import Stock from './Stock'
+import Chess from './Chess';
+import AddNotations from './AddNotations';
 
 class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      time: Date.now()
-    }
-  }
-  componentDidMount() {
-    this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
-  }
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
   render() {
-    let currDate = new Date(this.state.time);
+    const board = <Chess />
     return (<main>
-      <h1>{currDate.toString()}</h1>
+      <CurrentTime />
+      <h2>Задание 2</h2>
       <Stock />
+      <h2>Задание 3</h2>
+      {board}
+      <AddNotations board={board} />
     </main>)
   }
   
